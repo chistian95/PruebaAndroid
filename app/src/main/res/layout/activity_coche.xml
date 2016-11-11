@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Coche">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Potencia"
+        android:id="@+id/tv_potencia"
+        android:layout_below="@+id/et_marca"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/et_potencia"
+        android:layout_below="@+id/tv_potencia"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Matricula"
+        android:id="@+id/tv_matricula"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_matricula"
+        android:layout_below="@+id/tv_matricula"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/et_potencia" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Marca"
+        android:id="@+id/tv_marca"
+        android:layout_below="@+id/et_matricula"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_marca"
+        android:layout_below="@+id/tv_marca"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/et_matricula" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sp_dni"
+        android:layout_below="@+id/tv_dni"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/et_dni" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volver"
+        android:id="@+id/bt_volver"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="volver" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aceptar"
+        android:id="@+id/bt_aceptar"
+        android:layout_above="@+id/bt_volver"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/bt_volver"
+        android:onClick="aceptar" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sp_matricula"
+        android:layout_alignTop="@+id/et_matricula"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/et_matricula" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_dni"
+        android:enabled="false"
+        android:layout_below="@+id/tv_dni"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/et_potencia" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="DNI"
+        android:id="@+id/tv_dni"
+        android:layout_below="@+id/et_potencia"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="COCHES"
+        android:id="@+id/tv_coches"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
