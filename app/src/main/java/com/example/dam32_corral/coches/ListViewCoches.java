@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -13,12 +14,14 @@ import java.util.List;
 
 public class ListViewCoches extends AppCompatActivity {
     private ListView lv_coches;
+    private EditText etBuscar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view_coches);
         lv_coches = (ListView) findViewById(R.id.listView);
+        etBuscar = (EditText) findViewById(R.id.etBuscar);
 
         List<String> coches = new ArrayList<>();
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "seguros", null, 1);
@@ -45,6 +48,19 @@ public class ListViewCoches extends AppCompatActivity {
 
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, coches);
         lv_coches.setAdapter(adaptador);
+    }
+
+    public void buscar(View view) {
+        String texto = etBuscar.getText().toString();
+        if(texto.length() <= 0) {
+            return;
+        }
+
+        for(int i=0; i<lv_coches.getCount(); i++) {
+            if(lv_coches.getItemAtPosition(i).toString().contains(texto)) {
+                lv_coches.setSelection(i);
+            }
+        }
     }
 
     public void salir(View view) {
